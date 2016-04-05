@@ -4,7 +4,7 @@ using ApprovalTests.Reporters;
 using Xunit;
 namespace travis_test
 {
-    [UseReporter(typeof(XUnit2Reporter))]
+    [UseReporter(typeof(DiffReporter))]
     public class Tests
     {
         [Fact]
