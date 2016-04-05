@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using ApprovalTests;
+using ApprovalTests.Reporters;
 using Xunit;
 namespace travis_test
 {
+    [UseReporter(typeof(DiffReporter))]
     public class Tests
     {
         [Fact]
