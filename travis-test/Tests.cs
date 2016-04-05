@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using ApprovalTests;
+using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
 using Xunit;
 namespace travis_test
 {
     [UseReporter(typeof(QuietReporter))]
+    [UseApprovalSubdirectory("./approvals")]
     public class Tests
     {
         [Fact]
