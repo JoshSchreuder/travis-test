@@ -4,7 +4,7 @@ using ApprovalTests.Reporters;
 using Xunit;
 namespace travis_test
 {
-    [UseReporter(typeof(DiffReporter))]
+    [UseReporter(typeof(XUnit2Reporter))]
     public class Tests
     {
         [Fact]
@@ -14,7 +14,7 @@ namespace travis_test
         }
 
         [Fact]
-        public void TestApprovals()
+        public void TestApprovalsList()
         {
             Approvals.VerifyAll(new Dictionary<int, int>
             {
@@ -23,6 +23,12 @@ namespace travis_test
                 { 6, 3 * 2 },
                 { 8, 4 * 2 }
             });
+        }
+
+        [Fact]
+        public void TestApprovalsSolo()
+        {
+            Approvals.Verify(2 * 2);
         }
     }
 }
