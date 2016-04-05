@@ -1,6 +1,5 @@
 language: csharp
 solution: travis-test.sln
-mono: alpha
 script:
   - xbuild /p:Configuration=Release travis-test.sln
   - mono ./packages/xunit.runner.console.*/tools/xunit.console.x86.exe ./travis-test/bin/Release/travis-test.dll
